@@ -10,7 +10,7 @@
 /* Navigation Bar */
 .navigation-bar {
     position: fixed;
-       background-color: rgba(255, 255, 255, 0); 
+    background-color: rgba(255, 255, 255, 0); 
     display: flex;
     gap: 10px;
     padding: 15px 20px;

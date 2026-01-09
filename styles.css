@@ -9,7 +9,7 @@
 
 /* Navigation Bar */
 .navigation-bar {
-    position: fixed;
+   position: fixed;
     background-color: rgba(255, 255, 255, 0); 
     display: flex;
     gap: 10px;
@@ -31,6 +31,22 @@
 .navigation-bar a:hover {
     background-color: #d6d6d6;
     border-radius: 6px;
+}
+
+
+/* Navbar AFTER scrolling */
+.navigation-bar.scrolled {
+    background-color: rgba(255, 255, 255, 0.95); /* solid */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Links AFTER scrolling */
+.navigation-bar.scrolled a {
+    color: #000000; /* black text */
+}
+
+.navigation-bar.scrolled a:hover {
+    background-color: #e0e0e0;
 }
 
 /* Home Section */
@@ -58,13 +74,7 @@
     object-position: center;
     padding: 10px;
 }
-h2{
-    text-align: center;
-    
-    margin-top: 20px;
-    font-size: 36px;
-    color: #333;
-}
+
 /* Products Section */
 .products-section {
     width: 80%;
@@ -77,7 +87,11 @@ h2{
     margin-bottom: 40px;
     color: #333;
 }
-
+h2{
+    margin-bottom: 20px;
+    align-items: center;
+    font-size: 30px;
+}
 .product-list{
     display: flex;
     justify-content: space-between;

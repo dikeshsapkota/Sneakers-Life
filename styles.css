@@ -58,6 +58,13 @@
     object-position: center;
     padding: 10px;
 }
+h2{
+    text-align: center;
+    
+    margin-top: 20px;
+    font-size: 36px;
+    color: #333;
+}
 /* Products Section */
 .products-section {
     width: 80%;
@@ -108,4 +115,50 @@
 .product-item p {
     font-size: 16px;
     color: #555;
+}
+
+
+.container {
+    border: 1px solid #ffffff;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* center inputs/buttons inside */
+    padding: 20px;
+    max-width: 400px;
+    border-radius: 3%;
+}
+
+input{
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+}
+textarea {
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    height: 80px;
+    resize: none;
+}
+
+button{
+    color: white;
+    background-color: #4CAF50;
+    padding: 10px 20px;
+   border-radius: 5%;
+   cursor: pointer;
+   border:none;
+}
+button-hover{
+    opacity:0.9;
+    color:rgb(0, 63, 43);
+}
+
+p{
+    margin-top: 15px;
+    font-weight:bold;
+
+    flex-direction: column;
 }

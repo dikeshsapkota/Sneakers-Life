@@ -8,3 +8,34 @@ window.addEventListener('scroll', () => {
         navbar.classList.remove('scrolled');
     }
 });
+function sendEmail() {
+    const username = document.getElementById("username").value
+    const email = document.getElementById("email").value
+    const message = document.getElementById("message").value
+    const status = document.getElementById("status")
+    const output = document.getElementById("output")
+    
+    if (!username || !email || !message) {
+        status.textContent = "Please fill all fields"
+        return
+    }
+
+    
+output.innerHTML = `
+        Username: ${username}<br>
+        Email: ${email}<br>
+        Message: ${message}
+    `
+status.textContent = "Sending message..."
+    emailjs.send("service_jc8x7wf", "template_4sqiy68", {
+        username: username,
+        email: email,
+        message: message
+    })
+    .then(() => {
+        status.textContent = "Message sent successfully ✅"
+    })
+    .catch(() => {
+        status.textContent = "Failed to send message ❌"
+    })
+}

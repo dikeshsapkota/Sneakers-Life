@@ -8,6 +8,26 @@ window.addEventListener('scroll', () => {
         navbar.classList.remove('scrolled');
     }
 });
+//slider
+
+let index = 0;
+const visible = 3;
+const productWidth = 310; // product width + margin
+const total = document.querySelectorAll('.product-item').length;
+
+function slide(direction) {
+  const maxIndex = Math.ceil(total / visible) - 1;
+  index += direction;
+
+  if (index < 0) index = 0;
+  if (index > maxIndex) index = maxIndex;
+
+  document.getElementById("productTrack").style.transform =
+    `translateX(-${index * visible * productWidth}px)`;
+}
+
+
+//contact form
 function sendEmail() {
     const username = document.getElementById("username").value
     const email = document.getElementById("email").value

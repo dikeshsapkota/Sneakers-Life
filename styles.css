@@ -193,3 +193,34 @@ p{
 
     flex-direction: column;
 }
+/* for Mobile */
+@media (max-width: 600px) {
+
+  .navigation-bar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navigation-bar h1 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .home-section {
+    width: 95%;
+  }
+
+  .slider-container {
+    width: 100%;
+  }
+
+  .product-window {
+    width: 300px;
+  }
+
+  .product-item {
+    min-width: 260px;
+    max-width: 260px;
+  }
+}

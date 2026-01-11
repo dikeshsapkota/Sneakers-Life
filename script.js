@@ -10,21 +10,39 @@ window.addEventListener('scroll', () => {
 });
 //slider
 
+// ===== SLIDER (RESPONSIVE) =====
+
 let index = 0;
-const visible = 3;
-const productWidth = 310; // product width + margin
 const total = document.querySelectorAll('.product-item').length;
 
-function slide(direction) {
-  const maxIndex = Math.ceil(total / visible) - 1;
-  index += direction;
+function getVisibleProducts() {
+  if (window.innerWidth <= 600) return 1;   // mobile
+  if (window.innerWidth <= 900) return 2;   // tablet
+  return 3;                                 // desktop
+}
 
-  if (index < 0) index = 0;
-  if (index > maxIndex) index = maxIndex;
+function getProductWidth() {
+  if (window.innerWidth <= 600) return 280;
+  return 310;
+}
+
+function slide(direction) {
+  const visible = getVisibleProducts();
+  const productWidth = getProductWidth();
+  const maxIndex = Math.ceil(total / visible) - 1;
+
+  index += direction;
+  index = Math.max(0, Math.min(index, maxIndex));
 
   document.getElementById("productTrack").style.transform =
     `translateX(-${index * visible * productWidth}px)`;
 }
+
+// Reset slider on resize
+window.addEventListener("resize", () => {
+  index = 0;
+  slide(0);
+});
 
 
 //contact form
